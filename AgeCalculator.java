@@ -21,10 +21,13 @@ class calculator {
         int month = scr.nextInt();
         System.out.println("Enter your Birth day ");
         int day = scr.nextInt();
-
+        
         LocalDate l = LocalDate.of(year, month, day);
+        
+//         get current year
+        int currentYear = LocalDate.now().getYear();
 
-        if (year > 1950 && year < 2020) {
+        if (year > 1950 && year < currentYear) {
             if (l.isBefore(LocalDate.now())) {
                 LocalDate now = LocalDate.now();
                 Period diff = Period.between(now, l);
