@@ -24,8 +24,7 @@ class calculator {
 
         LocalDate l = LocalDate.of(year, month, day);
 
-        if (year > 1950 && year < 2020) {
-            if (l.isBefore(LocalDate.now())) {
+            if (year > 1950 && l.isBefore(LocalDate.now())) {
                 LocalDate now = LocalDate.now();
                 Period diff = Period.between(now, l);
                 System.out.println(" You are " + Math.abs(diff.getYears()) + " Years " + Math.abs(diff.getMonths()) + " Months " + Math.abs(diff.getDays()) + " Days  old ");
@@ -51,9 +50,6 @@ class calculator {
                 long secondDays = Math.abs(diff.getDays()) * 86400;
                 long seconds = secondYears + secondMonths + secondDays;
                 System.out.println(" you are age in Seconds \n  Your are " + seconds + " Seconds old ");
-
-            } else
-                System.out.println(" Entered Date is Greater than Current Date ..");
 
         } else
             System.out.println("Enter the year Greater than 1949 and less than Current Year ");
